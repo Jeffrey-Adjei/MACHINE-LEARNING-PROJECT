@@ -4,39 +4,15 @@
 % --------------------------------------------------------------------------
 \documentclass{article}
 \usepackage{spconf,amsmath,graphicx}
-
-% Example definitions.
-% --------------------
-\def\x{{\mathbf x}}
-\def\L{{\cal L}}
+\usepackage{hyperref}
 
 % Title.
 % ------
-\title{AUTHOR GUIDELINES FOR ICIP 2019 PROCEEDINGS MANUSCRIPTS}
-%
-% Single address.
-% ---------------
-\name{Author(s) Name(s)\thanks{Thanks to XYZ agency for funding.}}
-\address{Author Affiliation(s)}
-%
-% For example:
-% ------------
-%\address{School\\
-%	Department\\
-%	Address}
-%
-% Two addresses (uncomment and modify for two-address case).
-% ----------------------------------------------------------
-%\twoauthors
-%  {A. Author-one, B. Author-two\sthanks{Thanks to XYZ agency for funding.}}
-%	{School A-B\\
-%	Department A-B\\
-%	Address A-B}
-%  {C. Author-three, D. Author-four\sthanks{The fourth author performed the work
-%	while at ...}}
-%	{School C-D\\
-%	Department C-D\\
-%	Address C-D}
+\title{
+  Using machine learning to predict pathological complete response and relapse-free survival outcomes to improve patient stratification and treatment}
+
+\name{Jeffrey Adjei, Euan Deas, William Sephton, Simon Stubbs, Grace Otuagomah }
+\address{Univeristy of Nottingham\\Nottingham, United Kingdom}
 %
 \begin{document}
 %\ninept
@@ -44,198 +20,75 @@
 \maketitle
 %
 \begin{abstract}
-The abstract should appear at the top of the left-hand column of text, about
-0.5 inch (12 mm) below the title area and no more than 3.125 inches (80 mm) in
-length.  Leave a 0.5 inch (12 mm) space between the end of the abstract and the
-beginning of the main text.  The abstract should contain about 100 to 150
-words, and should be identical to the abstract text submitted electronically
-along with the paper cover sheet.  All manuscripts must be in English, printed
-in black ink.
+
 \end{abstract}
 %
 \begin{keywords}
-One, two, three, four, five
+
 \end{keywords}
 %
 \section{Introduction}
-\label{sec:intro}
+\subsection{Background}
+Breast cancer is the most prevalent cancer among women in the UK. Chemotherapy is a common treatment strategy used to reduce the size of locally advanced tumours before surgery. However, this approach is not always effective, as only 25\% of patients achieve a pathological complete response (PCR) at surgery, which is  associated with a higher likelihood of cure and longer relapse-free survival (RFS). The remaining 75\% of patients experience residual disease, leading to varied prognoses. Early prediction of PCR and RFS before chemotherapy could enable better patient stratification and more personalized treatment plans.
 
-These guidelines include complete descriptions of the fonts, spacing, and
-related information for producing your proceedings manuscripts. Please follow
-them and if you have any questions, direct them to Conference Management
-Services, Inc.: Phone +1-979-846-6800 or email
-to \\\texttt{icip2019@cmsworkshops.com}.
+\subsection{Aim}
+The aim of this project is to develop machine learning models to predict PCR (a classification problem) and RFS (a regression problem) using pre-chemotherapy clinical and MRI-derived features. These models will leverage a dataset derived from the I-SPY 2 Trial, which includes 11 clinical features, and 107 MRI-based features extracted from tumour regions.
 
-\section{Formatting your paper}
-\label{sec:format}
+\subsection{Objectives}
 
-All printed material, including text, illustrations, and charts, must be kept
-within a print area of 7 inches (178 mm) wide by 9 inches (229 mm) high. Do
-not write or print anything outside the print area. The top margin must be 1
-inch (25 mm), except for the title page, and the left margin must be 0.75 inch
-(19 mm).  All {\it text} must be in a two-column format. Columns are to be 3.39
-inches (86 mm) wide, with a 0.24 inch (6 mm) space between them. Text must be
-fully justified.
+\begin{enumerate}
+  \item Data Preprocessing: Handle missing values, outliers, and normalization to prepare the data for model development.
+  \item Feature Selection: Identify the most predictive features, ensuring key features (ER, HER2, and Gene) are retained in the models.
+  \item Model Development \& Hyperparameter Tuning:: Build and evaluate machine learning models for PCR classification and RFS regression using appropriate algorithms. Optimize model performance by tuning hyperparameters using grid search or other techniques.
+  \item Model Testing and Evaluation: Evaluate model performance on a reserved test set using balanced classification accuracy for PCR and mean absolute error for RFS.
+  \item Code and Submission: Prepare final code for testing on a hidden dataset and submit prediction results.
+\end{enumerate}
 
-\section{PAGE TITLE SECTION}
-\label{sec:pagestyle}
+This project can then be used to develop predictive tools that can aid clinicians in making more informed treatment decisions for breast cancer patients.
 
-The paper title (on the first page) should begin 1.38 inches (35 mm) from the
-top edge of the page, centered, completely capitalized, and in Times 14-point,
-boldface type.  The authors' name(s) and affiliation(s) appear below the title
-in capital and lower case letters.  Papers with multiple authors and
-affiliations may require two or more lines for this information. Please note
-that papers should not be submitted blind; include the authors' names on the
-PDF.
-
-\section{TYPE-STYLE AND FONTS}
-\label{sec:typestyle}
-
-To achieve the best rendering both in printed proceedings and electronic proceedings, we
-strongly encourage you to use Times-Roman font.  In addition, this will give
-the proceedings a more uniform look.  Use a font that is no smaller than nine
-point type throughout the paper, including figure captions.
-
-In nine point type font, capital letters are 2 mm high.  {\bf If you use the
-smallest point size, there should be no more than 3.2 lines/cm (8 lines/inch)
-vertically.}  This is a minimum spacing; 2.75 lines/cm (7 lines/inch) will make
-the paper much more readable.  Larger type sizes require correspondingly larger
-vertical spacing.  Please do not double-space your paper.  TrueType or
-Postscript Type 1 fonts are preferred.
-
-The first paragraph in each section should not be indented, but all the
-following paragraphs within the section should be indented as these paragraphs
-demonstrate.
-
-\section{MAJOR HEADINGS}
-\label{sec:majhead}
-
-Major headings, for example, "1. Introduction", should appear in all capital
-letters, bold face if possible, centered in the column, with one blank line
-before, and one blank line after. Use a period (".") after the heading number,
-not a colon.
-
-\subsection{Subheadings}
-\label{ssec:subhead}
-
-Subheadings should appear in lower case (initial word capitalized) in
-boldface.  They should start at the left margin on a separate line.
- 
-\subsubsection{Sub-subheadings}
-\label{sssec:subsubhead}
-
-Sub-subheadings, as in this paragraph, are discouraged. However, if you
-must use them, they should appear in lower case (initial word
-capitalized) and start at the left margin on a separate line, with paragraph
-text beginning on the following line.  They should be in italics.
-
-\section{PRINTING YOUR PAPER}
-\label{sec:print}
-
-Print your properly formatted text on high-quality, 8.5 x 11-inch white printer
-paper. A4 paper is also acceptable, but please leave the extra 0.5 inch (12 mm)
-empty at the BOTTOM of the page and follow the top and left margins as
-specified.  If the last page of your paper is only partially filled, arrange
-the columns so that they are evenly balanced if possible, rather than having
-one long column.
-
-In LaTeX, to start a new column (but not a new page) and help balance the
-last-page column lengths, you can use the command ``$\backslash$pagebreak'' as
-demonstrated on this page (see the LaTeX source below).
-
-\section{PAGE NUMBERING}
-\label{sec:page}
-
-Please do {\bf not} paginate your paper.  Page numbers, session numbers, and
-conference identification will be inserted when the paper is included in the
-proceedings.
-
-\section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
-\label{sec:illust}
-
-Illustrations must appear within the designated margins.  They may span the two
-columns.  If possible, position illustrations at the top of columns, rather
-than in the middle or at the bottom.  Caption and number every illustration.
-All halftone illustrations must be clear black and white prints.  Colors may be
-used, but they should be selected so as to be readable when printed on a
-black-only printer.
-
-Since there are many ways, often incompatible, of including images (e.g., with
-experimental results) in a LaTeX document, below is an example of how to do
-this \cite{Lamp86}.
-
-\section{FOOTNOTES}
-\label{sec:foot}
-
-Use footnotes sparingly (or not at all!) and place them at the bottom of the
-column on the page on which they are referenced. Use Times 9-point type,
-single-spaced. To help your readers, avoid using footnotes altogether and
-include necessary peripheral observations in the text (within parentheses, if
-you prefer, as in this sentence).
-
-% Below is an example of how to insert images. Delete the ``\vspace'' line,
-% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
-% with a suitable PostScript file name.
-% -------------------------------------------------------------------------
-\begin{figure}[htb]
-
-\begin{minipage}[b]{1.0\linewidth}
-  \centering
-  \centerline{\includegraphics[width=8.5cm]{image1}}
-%  \vspace{2.0cm}
-  \centerline{(a) Result 1}\medskip
-\end{minipage}
-%
-\begin{minipage}[b]{.48\linewidth}
-  \centering
-  \centerline{\includegraphics[width=4.0cm]{image3}}
-%  \vspace{1.5cm}
-  \centerline{(b) Results 3}\medskip
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \centerline{\includegraphics[width=4.0cm]{image4}}
-%  \vspace{1.5cm}
-  \centerline{(c) Result 4}\medskip
-\end{minipage}
-%
-\caption{Example of placing a figure with experimental results.}
-\label{fig:res}
-%
-\end{figure}
+\section{Related Work}
 
 
-% To start a new column (but not a new page) and help balance the last-page
-% column length use \vfill\pagebreak.
-% -------------------------------------------------------------------------
-%\vfill
-%\pagebreak
+\section{Method}
 
-\section{COPYRIGHT FORMS}
-\label{sec:copyright}
+The ML Pipeline Overview; The general machine learning pipeline is well known. If the data is unclean it must be cleaned, which often involves replacing missing values with appropriate means or medians. The data can be subject to optional standardisation/normalisation and to optional dimension reduction.  Different types of ML models are considered. Hyperparameters are chosen and tuned. Provisional assessments of models, hyperparameters etc. are conducted through strategic use of the available data. The process should end with the selected model or models with the selected hyperparameter being trained on all the available data. 
 
-You must include your fully completed, signed IEEE copyright release form when
-form when you submit your paper. We {\bf must} have this form before your paper
-can be published in the proceedings.
+\subsection{Data Cleaning}
+Missing values in the data where all replaced with the features' medians. (This meant that for binary features - such as 'pCR (outcome)' - the missing values will have been replaced by 1 or 0 depending upon which had the higher frequency.)  
+\subsection{Normalisation}
+Each data point was rescaled so that when all the features, excluding the key features of 'ER', 'HER2', and 'Gene' and the target features of 'pCR Outcome' and 'RelapseFreeSurvival (outcome)', are considered as a vector have an 'l2' norm of one. 
 
-\section{REFERENCES}
-\label{sec:ref}
+\subsection{Dimension Reduction}
+All features excluding 'ER', 'HER2', 'Gene', 'pCR Outcome' and 'RelapseFreeSurvival (outcome)' were subjected to Principal Components Analysis, whereby the number of components were selected so that the amount of variance to be explained was greater than 95\%.   
+\subsection{Hyperparameter Tuning}
+The hyperparameters of both the SVR and SVC were selected from a pre-set parameter grid through nested cross validation.
+\subsection{Training}
+SVR and SVC models with those selected hyperparameters were then trained on the entire data set. 
 
-List and number all bibliographical references at the end of the
-paper. The references can be numbered in alphabetic order or in
-order of appearance in the document. When referring to them in
-the text, type the corresponding reference number in square
-brackets as shown at the end of this sentence \cite{C2}. An
-additional final page (the fifth page, in most cases) is
-allowed, but must contain only references to the prior
-literature.
+\section{Evaluation}
+
+The dataset used to train the model was a simplified version of the public dataset from The American College of Radiology Imaging Network I-SPY 2 TRIAL \ref{newitt2021acr}. This data set was generated to evaluate the effectiveness of quantitative diffusion weight imaging (DWI) for assessing breast cancer response to neoadjuvant chemotherapy (NAC). Of the 400 patients in the dataset each had 118 features. 11 of those features are clinical, describing the patients age, tumour stage, lymph node status and more. 107 of those features are MRI-based, extracted from the tumour region using radiomics feature extraction package. Apart from the age all clinical data was categorical, and all MRI-based data was continuous. The dataset also includes two outcomes, a binary pathological complete response (PCR) classification and a continuous relapse-free survival (RFS) time.
+The dataset comes with a number of different challenges that need to be tackled before training a model on it. One of these challenges is that during feature selection it is important that the ER, HER2 and Gene are retained as they are very important features. Another challenge with this dataset is that the PCR outcome and almost all the clinical features contain missing data. Particularly the Gene feature was missing in the cases of 88 patients. This was dealt with by trying a number of data imputation methods. The biggest challenge of this dataset is the low number of patient samples, this paired with the large number of features means that training and validating the model poses a significant risk of over-fitting, leading to poor generalisation on unseen data. This sample number is also unbalanced with more samples for when PCR is not possible. To deal with this cross validation was used, but due to the sample number this also poses challenges as the number of folds must be balanced.
+From our testing the support vector classification model performed best for PCR classification. The cross fold validation showed a mean accuracy of 62.25\%, with the best fold performing with a 79\% accuracy and the worst performing with 23\%. From the cross fold validation it showed that the best performing parameters were balanced class weight, the Radial Basis Function kernel, a C of 1 and a gamma of 0.01. By retraining the model with these parameters on an 80:20 test split we obtained an accuracy of 75\%. The model is much better at predicting when a PCR is not possible (83\% f1 score), with a f1 score of 50\% for when it is possible. This is also shown in the confusion matrix in Figure XX. The confusion matrix also shows the class imbalance in the dataset. Figure XX shows the ROC curve for the model that indicates that the model has acceptable performance in distinguishing between the classes being moderately better than random guessing, however it is not exceptionally strong.
+Based on the tested regression models, we chose the support vector regressor for the RFS regression. The cross fold validation showed an average mean squared error (MSE) of 739.18, an R-squared score of -0.0074 and a mean absolute error (MAE) of 21.2267. This indicates fairly poor performance. From the cross fold validation the best parameters were the Radial Basis Function kernel, a C of 1 and an epsilon of 0.2. Training the model with these parameters on an 80:20 split of the dataset gave an MSE of 797.89, R-squared of 0.0002 and MAE of 21.64. Following on from the cross fold validation, the model continues to struggle in predicting values, with a lack of precision and performing almost identically to simply predicting the mean of the target variable for all data.
+
+\section{Discussion}
+
+Both models used have their own advantages and disadvantages that are crucial in understanding the choice to apply them in this scenario.
+The Support Vector Classification (SVC) model is extremely effective when dealing with high dimensional spaces which in turn allows for a solid ability to generate complex decision boundaries, which is important with a dataset of this style. With the added ability to use margin maximization, SVC models generalize efficiently when using unseen data increasing its application potential in terms of versatility.
+The SVC model has some disadvantages such as an enhanced focus required on defining the hyperparameters for model accuracy, if the incorrect kernel is selected then the output will be heavily impacted. SVC models also have the downside of being computationally expensive, meaning on unknown datasets of varying sizes, results may take longer to process contrasting to other machine learning methods.
+The advantages of SVC models outweigh the disadvantages as effort has been dedicated into tuning the hyperparameters and being provided with an example dataset allows the feature selection process to be smooth and accurate.
+The Support Vector Regression (SVR) model has a specific feature that makes it a powerful option, the robust ability to ignore errors within a margin of tolerance to focus on general trends rather than being affected by every outlier. Along with SVC models, SVR models also work effectively with high dimensionality increasing the number of applications and scenarios the model is applicable in.
+The SVR model does not just share positive similarities with SVC models, but also the negatives that come with being Support Vector Methods. One of these negatives is the computational complexity, especially with large datasets, meaning depending on the dataset results could take longer to be produced which could be an issue if the scenario requires efficiency over accuracy.  The need for essential hyperparameter tuning also plagues SVR models but fortunately, as stated previously, time has been dedicated into researching and analysing the best hyperparameter settings to ensure these models are the correct and appropriate models for the dataset provided. 
+
+\section{Conclusion}
+
 
 % References should be produced using the bibtex program from suitable
 % BiBTeX files (here: strings, refs, manuals). The IEEEbib.bst bibliography
 % style file from IEEE produces unsorted bibliography list.
 % -------------------------------------------------------------------------
-\bibliographystyle{IEEEbib}
-\bibliography{strings,refs}
+\bibliographystyle{unsrt}
+\bibliography{refs}
 
 \end{document}
