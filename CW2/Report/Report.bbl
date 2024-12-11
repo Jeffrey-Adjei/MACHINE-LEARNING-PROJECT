@@ -1,8 +1,23 @@
 \begin{thebibliography}{1}
 
+\bibitem{spring2020pathologic}
+Laura~M Spring, Geoffrey Fell, Andrea Arfe, Chandni Sharma, Rachel Greenup, Kerry~L Reynolds, Barbara~L Smith, Brian Alexander, Beverly Moy, Steven~J Isakoff, et~al.
+\newblock Pathologic complete response after neoadjuvant chemotherapy and impact on breast cancer recurrence and survival: a comprehensive meta-analysis.
+\newblock {\em Clinical cancer research}, 26(12):2838--2848, 2020.
+
 \bibitem{newitt2021acr}
 D.~C. Newitt, S.~C. Partridge, Z.~Zhang, J.~Gibbs, T.~Chenevert, M.~Rosen, P.~Bolan, H.~Marques, J.~Romanoff, L.~Cimino, B.~N. Joe, H.~Umphrey, H.~Ojeda-Fournier, B.~Dogan, K.~Y. Oh, H.~Abe, J.~Drukteinis, L.~J. Esserman, and N.~M. Hylton.
 \newblock {ACRIN 6698/I-SPY2 Breast DWI [Data set]}, 2021.
 \newblock The Cancer Imaging Archive.
+
+\bibitem{Zhao2024}
+Fangyuan Zhao, Eric Polley, Julian McClellan, Frederick Howard, Olufunmilayo~I. Olopade, and Dezheng Huo.
+\newblock Predicting pathologic complete response to neoadjuvant chemotherapy in breast cancer using a machine learning approach.
+\newblock {\em Breast Cancer Research}, 26(1):148, Oct 2024.
+
+\bibitem{Dihge2019}
+Looket Dihge, Mattias Ohlsson, Patrik Ed{\'e}n, P{\"a}r-Ola Bendahl, and Lisa Ryd{\'e}n.
+\newblock Artificial neural network models to predict nodal status in clinically node-negative breast cancer.
+\newblock {\em BMC Cancer}, 19(1):610, Jun 2019.
 
 \end{thebibliography}
